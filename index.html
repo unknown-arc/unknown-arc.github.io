@@ -1,0 +1,103 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Ankit Kumar Singh — Portfolio.</title>
+<meta name="description" content="My personal site to showcase my developer work and opinions.">
+<link rel="icon" href="favicon.ico">
+<link rel="icon" href="icon.svg" type="image/svg+xml">
+<link rel="apple-touch-icon" href="apple-touch-icon.png">
+<link rel="manifest" href="manifest.json">
+<link rel="stylesheet" href="css/style.css">
+<script src="js/theme-init.js"></script>
+</head>
+<body>
+<header class="site-header" id="site-header"></header>
+
+<div class="wrap">
+  <main>
+    <article class="hero" id="hero-article">
+      <div class="swipe-cards" id="swipe-cards"></div>
+
+      <div class="hero-copy">
+        <h1 class="title text-balance" id="hero-greeting"></h1>
+        <p class="hero-age" id="hero-age"></p>
+        <p class="hero-desc text-balance" id="hero-desc"></p>
+
+        <div class="hero-chat-prompt">
+          <p class="text-balance" id="hero-chat-prompt"></p>
+          <i data-lucide="arrow-down-right" class="arrow-dr"></i>
+          <i data-lucide="arrow-down" class="arrow-d"></i>
+        </div>
+
+        <p class="hero-escalation" id="hero-escalation"></p>
+
+        <section class="hero-actions">
+          <a href="resume.pdf" target="_blank">
+            <button class="btn btn-outline" type="button">
+              <span style="font-weight:600">Resume</span>
+              <i data-lucide="file-down" style="margin-left:.5rem;width:1.25rem;height:1.25rem"></i>
+            </button>
+          </a>
+          <div id="socials-hero"></div>
+        </section>
+      </div>
+    </article>
+
+    <section style="margin-top:2rem" id="experience-mount"></section>
+
+    <section style="margin-top:2rem;display:flex;flex-direction:column;gap:2rem;padding-bottom:4rem">
+      <div class="section-heading">
+        <h2 class="title">featured projects</h2>
+        <a href="projects.html" class="link link-icon">
+          <span>view more</span>
+          <i data-lucide="arrow-right"></i>
+        </a>
+      </div>
+      <div class="projects-grid" id="projects-mount"></div>
+    </section>
+  </main>
+</div>
+
+<footer class="site-footer" id="site-footer"></footer>
+
+<div class="chat-root" id="chat-root"></div>
+
+<script src="https://unpkg.com/lucide@latest/dist/umd/lucide.js"></script>
+<script src="js/data.js"></script>
+<script src="js/render.js"></script>
+<script src="js/app.js"></script>
+<script src="js/swipecards.js"></script>
+<script src="js/chat.js"></script>
+<script>
+  (function () {
+    var home = window.SITE_DATA.home;
+    var BIRTH_YEAR = 2006; // ~20 years old
+    var currentAge = new Date().getFullYear() - BIRTH_YEAR;
+
+    document.getElementById("hero-greeting").textContent = home.introduction.greeting;
+    document.getElementById("hero-age").textContent = currentAge + "yo Data Analyst from India 🇮🇳";
+    document.getElementById("hero-desc").textContent = home.introduction.description;
+    document.getElementById("hero-chat-prompt").textContent = home.introduction.chatPrompt;
+    document.getElementById("hero-escalation").innerHTML =
+      home.introduction.escalation.text + "&nbsp;" +
+      '<a href="' + home.escalationLink.href + '" target="_blank" class="link" style="font-weight:600;text-decoration:underline" title="' + home.escalationLink.title + '">' +
+      home.introduction.escalation.linkText + "</a>&nbsp;" +
+      home.introduction.escalation.suffix;
+
+    SiteRender.renderHeader("index.html");
+    SiteRender.renderFooter();
+    SiteRender.renderSocials("socials-hero");
+    SiteRender.renderExperience("experience-mount");
+    SiteRender.renderProjects("projects-mount", 2);
+
+    initThemeToggle();
+    initSwipeCards("swipe-cards");
+    initChat();
+
+    if (window.lucide) window.lucide.createIcons();
+  })();
+</script>
+</body>
+</html>

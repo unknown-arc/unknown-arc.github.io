@@ -1,0 +1,77 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>privacy policy. — Ankit Kumar Singh — Portfolio.</title>
+<meta name="description" content="Privacy policy">
+<link rel="icon" href="favicon.ico">
+<link rel="icon" href="icon.svg" type="image/svg+xml">
+<link rel="apple-touch-icon" href="apple-touch-icon.png">
+<link rel="manifest" href="manifest.json">
+<link rel="stylesheet" href="css/style.css">
+<script src="js/theme-init.js"></script>
+</head>
+<body>
+<header class="site-header" id="site-header"></header>
+
+<div class="wrap">
+  <main>
+    <article class="article">
+      <h1 class="title">privacy policy.</h1>
+
+      <div class="prose">
+        <p><em>Last Updated: Dec 2025</em></p>
+
+        <h2>TL;DR</h2>
+        <p>This site doesn't track you. If you use the chatbot, messages are stored in my database so I can see what people are asking and improve the site.</p>
+
+        <h2>Hey 👋</h2>
+        <p>Thanks for stopping by. This is my personal portfolio where I share my work, projects, and thoughts. I care about privacy, so here's a simple, no-nonsense explanation of how things work.</p>
+
+        <h2>What I collect (and why)</h2>
+        <p>This site is mostly static. There are no accounts, no ads, and no tracking cookies watching what you do.</p>
+        <p>There are only a couple of cases where information might be stored:</p>
+
+        <h2>Chatbot messages</h2>
+        <p>If you use the chatbot, the messages are stored in my own database. I use them purely to understand what people are asking about, spot gaps in the site, and improve the chatbot and content over time.</p>
+        <p>I'm the only one looking at this data. It's not shared or sold. Please don't put anything sensitive or offensive into the chat.</p>
+
+        <h2>Contacting me</h2>
+        <p>If you email me or use the contact form, I'll only use your email to reply and continue the conversation.</p>
+
+        <h2>How I use the info</h2>
+        <p>Any information that's collected is used to:</p>
+        <ul style="margin:1em 0 1em 1.5em;list-style:disc">
+          <li>Keep the site running properly</li>
+          <li>Improve the site and content</li>
+          <li>Respond to messages and feedback</li>
+        </ul>
+        <p>That's it.</p>
+        <p>I don't sell, trade, or rent personal data. If you accidentally share something you'd rather not have stored, just let me know and I'll remove it.</p>
+
+        <h2>Questions?</h2>
+        <p>If you have questions, concerns, or just want to say hi, email me at <a href="mailto:ankitkumarsingh.in@gmail.com">ankitkumarsingh.in@gmail.com</a> or use the <a href="contact.html">contact form</a>. Happy to chat.</p>
+      </div>
+    </article>
+  </main>
+</div>
+
+<footer class="site-footer" id="site-footer"></footer>
+
+<div class="chat-root" id="chat-root"></div>
+
+<script src="https://unpkg.com/lucide@latest/dist/umd/lucide.js"></script>
+<script src="js/data.js"></script>
+<script src="js/render.js"></script>
+<script src="js/app.js"></script>
+<script src="js/chat.js"></script>
+<script>
+  SiteRender.renderHeader("privacy.html");
+  SiteRender.renderFooter();
+  initThemeToggle();
+  initChat();
+  if (window.lucide) window.lucide.createIcons();
+</script>
+</body>
+</html>

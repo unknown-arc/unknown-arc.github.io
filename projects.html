@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>my projects. — Ankit Kumar Singh — Portfolio.</title>
+<meta name="description" content="Portfolio projects showcase">
+<link rel="icon" href="favicon.ico">
+<link rel="icon" href="icon.svg" type="image/svg+xml">
+<link rel="apple-touch-icon" href="apple-touch-icon.png">
+<link rel="manifest" href="manifest.json">
+<link rel="stylesheet" href="css/style.css">
+<script src="js/theme-init.js"></script>
+</head>
+<body>
+<header class="site-header" id="site-header"></header>
+
+<div class="wrap">
+  <main>
+    <article class="article">
+      <h1 class="title">my projects.</h1>
+      <div class="projects-grid" id="projects-mount"></div>
+    </article>
+  </main>
+</div>
+
+<footer class="site-footer" id="site-footer"></footer>
+
+<div class="chat-root" id="chat-root"></div>
+
+<script src="https://unpkg.com/lucide@latest/dist/umd/lucide.js"></script>
+<script src="js/data.js"></script>
+<script src="js/render.js"></script>
+<script src="js/app.js"></script>
+<script src="js/chat.js"></script>
+<script>
+  SiteRender.renderHeader("projects.html");
+  SiteRender.renderFooter();
+  SiteRender.renderProjects("projects-mount");
+  initThemeToggle();
+  initChat();
+  if (window.lucide) window.lucide.createIcons();
+</script>
+</body>
+</html>
