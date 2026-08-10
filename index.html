@@ -76,7 +76,11 @@
     var BIRTH_YEAR = 2006; // ~20 years old
     var currentAge = new Date().getFullYear() - BIRTH_YEAR;
 
-    document.getElementById("hero-greeting").textContent = home.introduction.greeting;
+    document.getElementById("hero-greeting").innerHTML =
+      home.introduction.greeting.replace(
+        "👋",
+        '<span class="wave" aria-hidden="true">👋</span>'
+      );
     document.getElementById("hero-age").textContent = currentAge + "yo Data Analyst from India 🇮🇳";
     document.getElementById("hero-desc").textContent = home.introduction.description;
     document.getElementById("hero-chat-prompt").textContent = home.introduction.chatPrompt;

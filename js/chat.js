@@ -71,13 +71,18 @@
     root.innerHTML = `
       <div class="chat-panel" id="chat-panel">
         <button class="chat-trigger" id="chat-trigger" type="button" aria-expanded="false">
-          <span class="chat-trigger-inner">
-            <span style="display:flex;flex-direction:column;align-items:flex-start">
+          <span class="chat-bot-icon" aria-hidden="true">
+            ${window.SiteRender.icon("bot", "chat-bot-svg")}
+          </span>
+          <span class="chat-trigger-content">
+            <span class="chat-trigger-copy">
               <p class="small">Chat with</p>
               <span class="status"><span class="dot"></span><span class="who">Ankit's Assistant</span></span>
             </span>
           </span>
-          ${window.SiteRender.icon("chevron-down", "chat-chevron")}
+          <span class="chat-trigger-arrow">
+            ${window.SiteRender.icon("chevron-down", "chat-chevron")}
+          </span>
         </button>
         <div class="chat-body">
           <div class="chat-messages" id="chat-messages"></div>

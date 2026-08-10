@@ -99,6 +99,16 @@
         applyDragFrame();
       }
 
+      // Automatic rotation calls this hook. It intentionally enters
+      // the same code path as a real drag, so the drag animation is not
+      // duplicated or visually changed.
+      el.__autoSwipe = function () {
+        if (dragging) return;
+        x = -120;
+        dragging = true;
+        onPointerUp();
+      };
+
       function onPointerUp() {
         if (!dragging) return;
         dragging = false;
@@ -109,7 +119,10 @@
           el.style.transition = "transform .35s cubic-bezier(.2,.8,.2,1), opacity .35s ease";
           applyTransform(el, dir * 400, rotate + dir * 20, scale, 0);
           setTimeout(() => {
+            // Move the swiped image to the BACK of the stack.
+            // The existing drag animation above is unchanged.
             cards = cards.filter((c) => c.id !== card.id);
+            cards.unshift(card);
             render();
           }, 220);
         } else {
@@ -153,7 +166,50 @@
       return Math.max(min, Math.min(max, v));
     }
 
+    // ------------------------------------------------------------
+    // Automatic rotation — uses the EXISTING drag animation.
+    // ------------------------------------------------------------
+    let autoTimer = null;
+    let autoPaused = false;
+
+    function scheduleAutoChange() {
+      clearTimeout(autoTimer);
+
+      if (autoPaused) return;
+
+      // Random interval: 3–5 seconds.
+      const delay = 3000 + Math.floor(Math.random() * 2001);
+
+      autoTimer = setTimeout(() => {
+        const front = mount.querySelector(".swipe-card.front");
+
+        if (front && typeof front.__autoSwipe === "function") {
+          front.__autoSwipe();
+        }
+
+        scheduleAutoChange();
+      }, delay);
+    }
+
+    // The image stack pauses while the cursor is over it.
+    mount.addEventListener("mouseenter", () => {
+      autoPaused = true;
+      clearTimeout(autoTimer);
+    });
+
+    mount.addEventListener("mouseleave", () => {
+      autoPaused = false;
+      scheduleAutoChange();
+    });
+
+    // Stop the timer while a manual drag is happening.
+    mount.addEventListener("pointerdown", () => {
+      clearTimeout(autoTimer);
+    }, true);
+
+    // Start the automatic cycle.
     render();
+    scheduleAutoChange();
   }
 
   window.initSwipeCards = initSwipeCards;
