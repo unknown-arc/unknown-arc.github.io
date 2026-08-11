@@ -78,7 +78,7 @@ window.SITE_DATA = {
           end: "Present",
           description: [
             "Excellence in Mathematics",
-            "Member of ARCANE",
+            "ARCANE Club Member — IIT Patna's student technical society",
             "Academic CPI Score: 9.12",
           ],
         },
@@ -86,17 +86,14 @@ window.SITE_DATA = {
     },
   ],
 
-  // Only TT4D kept, per request
   projects: [
     {
-      name: "TT4D",
-      description: "Generate winning combinations, view past results, and analyze lottery trends all in one place",
-      image: "img/tt4d.png",
-      tags: ["Python", "FastAPI", "Docker", "Fly.io", "NextJS", "PostgreSQL", "TailwindCSS", "BS4"],
+      name: "THEME.BY",
+      description: "A Chrome extension that reskins the IIT Patna Moodle portal with a modern, Apple-inspired theme — instant light/dark switching and a clean, distraction-free UI.",
+      tags: ["HTML", "CSS", "JS", "Python", "Django", "PostgreSQL"],
       links: [
-        { name: "Website", href: "https://huatnumbers.com", icon: "globe" },
-        { name: "Source", href: "https://github.com/tedawf/tt4d", icon: "github" },
-        { name: "Source (UI)", href: "https://github.com/tedawf/tt4d-web", icon: "github" },
+        { name: "Chrome Store", href: "https://chromewebstore.google.com/detail/odhkckgcpfajedccahpffffkfjhbgphj?utm_source=item-share-cb", icon: "globe" },
+        { name: "Source", href: "https://github.com/unknown-arc/theame.by", icon: "github" },
       ],
     },
   ],

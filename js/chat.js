@@ -109,14 +109,30 @@
     let messages = [];
     let opened = false;
 
-    trigger.addEventListener("click", () => {
-      const isOpen = panel.classList.toggle("open");
+    function setOpen(isOpen) {
+      panel.classList.toggle("open", isOpen);
       trigger.setAttribute("aria-expanded", String(isOpen));
       if (isOpen && !opened) {
         opened = true;
         renderMessages();
       }
+    }
+
+    trigger.addEventListener("click", () => {
+      setOpen(!panel.classList.contains("open"));
     });
+
+    // Public API so other parts of the page (e.g. the "Ankit's Assistant"
+    // link in the hero) can open the widget programmatically.
+    window.ArcChat = {
+      open() {
+        setOpen(true);
+        input.focus();
+      },
+      close() {
+        setOpen(false);
+      },
+    };
 
     input.addEventListener("input", () => {
       sendBtn.disabled = input.value.length === 0;

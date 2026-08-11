@@ -9,7 +9,12 @@
 <link rel="icon" href="icon.svg" type="image/svg+xml">
 <link rel="apple-touch-icon" href="apple-touch-icon.png">
 <link rel="manifest" href="manifest.json">
-<link rel="stylesheet" href="css/style.css">
+<link rel="stylesheet" href="css/variables.css">
+<link rel="stylesheet" href="css/base.css">
+<link rel="stylesheet" href="css/typography.css">
+<link rel="stylesheet" href="css/components.css">
+<link rel="stylesheet" href="css/chat.css">
+<link rel="stylesheet" href="css/animations.css">
 <script src="js/theme-init.js"></script>
 </head>
 <body>
@@ -79,11 +84,18 @@
     document.getElementById("hero-greeting").innerHTML =
       home.introduction.greeting.replace(
         "👋",
-        '<span class="wave" aria-hidden="true">👋</span>'
+        '<span class="wave wave-play" aria-hidden="true">👋</span>'
       );
     document.getElementById("hero-age").textContent = currentAge + "yo Data Analyst from India 🇮🇳";
     document.getElementById("hero-desc").textContent = home.introduction.description;
-    document.getElementById("hero-chat-prompt").textContent = home.introduction.chatPrompt;
+
+    // Wrap "Ankit's Assistant" so it underlines on hover and opens the chat widget on click.
+    document.getElementById("hero-chat-prompt").innerHTML =
+      home.introduction.chatPrompt.replace(
+        "Ankit's Assistant",
+        '<span class="chat-open-link" id="hero-chat-open" role="button" tabindex="0">Ankit\'s Assistant</span>'
+      );
+
     document.getElementById("hero-escalation").innerHTML =
       home.introduction.escalation.text + "&nbsp;" +
       '<a href="' + home.escalationLink.href + '" target="_blank" class="link" style="font-weight:600;text-decoration:underline" title="' + home.escalationLink.title + '">' +
@@ -99,6 +111,30 @@
     initThemeToggle();
     initSwipeCards("swipe-cards");
     initChat();
+
+    // Waving hand: let the "play once on visit" animation finish, then hand
+    // control back to the plain :hover rule so re-hovering still waves.
+    var waveEl = document.querySelector(".wave");
+    if (waveEl) {
+      waveEl.addEventListener("animationend", function () {
+        waveEl.classList.remove("wave-play");
+      });
+    }
+
+    // Clicking "Ankit's Assistant" opens the chat widget.
+    var chatOpenLink = document.getElementById("hero-chat-open");
+    if (chatOpenLink) {
+      var openChat = function () {
+        if (window.ArcChat) window.ArcChat.open();
+      };
+      chatOpenLink.addEventListener("click", openChat);
+      chatOpenLink.addEventListener("keydown", function (e) {
+        if (e.key === "Enter" || e.key === " ") {
+          e.preventDefault();
+          openChat();
+        }
+      });
+    }
 
     if (window.lucide) window.lucide.createIcons();
   })();

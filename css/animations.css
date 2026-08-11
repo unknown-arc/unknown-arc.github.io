@@ -1,0 +1,50 @@
+/* =========================================================
+   animations.css — keyframes & animated utility classes
+   ========================================================= */
+
+@keyframes bounce {
+  0%, 100% { transform: translateY(-15%); animation-timing-function: cubic-bezier(.8,0,1,1); }
+  50% { transform: none; animation-timing-function: cubic-bezier(0,0,.2,1); }
+}
+
+@keyframes pulse { 0%,100% { opacity: 1; } 50% { opacity: .5; } }
+
+@keyframes fadeIn { from { opacity: 0; } to { opacity: 1; } }
+
+@keyframes zoomIn { from { transform: scale(.95); opacity: 0; } to { transform: scale(1); opacity: 1; } }
+
+@keyframes toastIn { from { transform: translateY(8px); opacity: 0; } to { transform: translateY(0); opacity: 1; } }
+
+@keyframes spin { to { transform: rotate(360deg); } }
+
+/* ---------- waving hand ----------
+   Plays once when the page is visited/revisited (JS adds .wave-play on
+   load, then removes it once the animation ends), and replays on hover.
+   It intentionally does NOT loop forever. */
+@keyframes wave-animation {
+  0%   { transform: rotate(0deg); }
+  10%  { transform: rotate(14deg); }
+  20%  { transform: rotate(-8deg); }
+  30%  { transform: rotate(14deg); }
+  40%  { transform: rotate(-4deg); }
+  50%  { transform: rotate(10deg); }
+  60%  { transform: rotate(0deg); }
+  100% { transform: rotate(0deg); }
+}
+
+.wave {
+  display: inline-block;
+  transform-origin: 70% 70%;
+}
+
+.wave.wave-play,
+.wave:hover {
+  animation: wave-animation 1.4s ease-in-out;
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .wave.wave-play,
+  .wave:hover {
+    animation: none;
+  }
+}
