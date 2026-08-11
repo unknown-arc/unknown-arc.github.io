@@ -78,7 +78,6 @@ window.SITE_DATA = {
           end: "Present",
           description: [
             "Excellence in Mathematics",
-            "ARCANE Club Member — IIT Patna's student technical society",
             "Academic CPI Score: 9.12",
           ],
         },
