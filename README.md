@@ -1,30 +1,54 @@
-**Ankit Kumar Singh
-Data Analyst
-India | ankitkumarsingh.in@gmail.com | linkedin.com/in/ankitkumarsingh-in | github.com/unknown-arc**
+<h1 align="center">Hi 👋, I'm Ankit Kumar Singh</h1>
+<h3 align="center">Machine Learning Engineer | Backend Developer | Data Analytics</h3>
 
-**Summary**
-Data Analyst with a foundation in Python development, currently pursuing a B.Sc in Computer Science and Data
-Analytics at IIT Patna. Comfortable turning raw data into clear insights using Python, SQL, and visualization tools, with
-hands-on experience building small automation tools and personal projects.
+<p align="center">
+  I build scalable backend systems, develop intelligent machine learning models, and leverage data analysis for advanced model training and feature engineering. Currently pursuing a B.Sc in Computer Science and Data Analytics at IIT Patna.
+</p>
 
-**Experience**
-Data Analyst — Freelance / Self-Employed
-2025 – Present
-• Analyzing datasets and building dashboards & reports using Python (Pandas, NumPy), SQL, and visualization
-tools like Power BI to support data-driven decisions.
-• Cleaning, transforming, and automating data pipelines to turn raw data into clear, actionable insights.
-Python Developer — Freelance / Self-Employed
-2023 – 2024
-• Built small automation scripts, tools, and personal projects in Python, sharpening core programming and
-problem-solving skills.
-• Worked with libraries like Pandas and Matplotlib on early projects, laying the foundation for data analysis work.
+<p align="center">
+  <a href="mailto:ankitkumarsingh.in@gmail.com">📫 Reach me here</a> • 
+  <a href="https://linkedin.com/in/YOUR_LINKEDIN">LinkedIn</a> • 
+  <a href="YOUR_PORTFOLIO_LINK">Portfolio</a>
+</p>
 
-**Education**
-B.Sc in Computer Science and Data Analytics
-Indian Institute of Technology Patna | Dec 2024 – Present
-• Academic CPI Score: 9.12
-• Excellence in Mathematics
+---
 
-**Skills**
-Python (Pandas, NumPy, Matplotlib) • SQL • Power BI • Data Cleaning & Automation • Git/GitHub
-This is a placeholder resume generated for the portfolio site — replace resume.pdf with your own file any time.
+### 🛠️ Technical Arsenal
+
+**Programming & Backend:**  
+![Python](https://img.shields.io/badge/python-3670A0?style=for-the-badge&logo=python&logoColor=ffdd54)
+![SQL](https://img.shields.io/badge/sql-003B57?style=for-the-badge&logo=postgresql&logoColor=white)
+![FastAPI](https://img.shields.io/badge/FastAPI-005571?style=for-the-badge&logo=fastapi)
+![Linux](https://img.shields.io/badge/Linux-FCC624?style=for-the-badge&logo=linux&logoColor=black)
+
+**Machine Learning & Data Analytics:**  
+![Scikit-Learn](https://img.shields.io/badge/scikit--learn-%23F7931E.svg?style=for-the-badge&logo=scikit-learn&logoColor=white)
+![Pandas](https://img.shields.io/badge/pandas-%23150458.svg?style=for-the-badge&logo=pandas&logoColor=white)
+![NumPy](https://img.shields.io/badge/numpy-%23013243.svg?style=for-the-badge&logo=numpy&logoColor=white)
+
+---
+
+### 🚀 Featured Projects
+
+#### 1. RepoHealth 
+A repository health analysis tool that automates the evaluation of maintenance status.
+*   **Impact:** Quantified maintenance metrics for 50+ repositories, drastically improving developer decision-making speed by removing manual evaluation latency.
+*   **Tech Stack:** Python, GitHub REST API, Asynchronous Programming.
+
+#### 2. Toolkit (Modular Desktop Ecosystem)
+A scalable modular desktop framework featuring an integrated application system for dynamic sub-app deployment.
+*   **Impact:** Streamlined deployment processes, reduced modular dependency conflicts, and enabled high-performance execution of concurrent workflows.
+*   **Tech Stack:** Python, PyQt6, FastAPI, Containerized Backend.
+
+---
+
+### 🎓 Education
+**Indian Institute of Technology, Patna** (Dec 2024 – Dec 2027)  
+*B.Sc in Computer Science and Data Analytics*  
+*   **Academic CPI:** 9.41/10.0 
+*   **Highlights:** Consistently ranked among top performers in the batch.
+
+---
+<p align="center">
+  <img src="https://github-readme-stats.vercel.app/api?username=YOUR_GITHUB_USERNAME&show_icons=true&theme=radical" alt="GitHub Stats" />
+</p>
